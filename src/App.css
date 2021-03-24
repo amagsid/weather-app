@@ -1,16 +1,200 @@
+@import url("https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100;200;300;400;500;600;700;800;900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: "Encode Sans", sans-serif;
+  font-family: "Raleway", sans-serif;
+}
+
+body {
+  background-color: #f6f6f6;
+  font-size: 16px;
+}
+
+*:focus {
+  outline: none;
+}
+
 .App {
+  width: 50%;
+  margin: 0 auto;
+  align-content: center;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.city {
+  border-radius: 10px;
+  color: white;
+  background-color: #43b3ad;
+  min-width: 100%;
+  margin-bottom: 60px;
+  text-align: left;
+  padding: 0px 20px 0px 20px;
+  width: 300px;
+}
+
+.city h2 {
+  padding-bottom: 20px;
+}
+
+.weather-app {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.weather-app-form {
+  position: relative;
+  justify-content: space-around;
+  display: flex;
+  margin: 100px 30px 30px 30px;
+  font-size: 1.5rem;
+  width: 100%;
+}
+
+.feedbcak {
+  position: absolute;
+  font-weight: 500;
+  color: #43b3ae;
+}
+
+.feedbcak.start {
+  top: 40px;
+  left: 10px;
+}
+
+.error {
+  color: rgb(177, 0, 0);
+  bottom: -30px;
+  left: 10px;
+}
+
+.error .icon {
+  margin-right: 10px;
+}
+
+.loading-icon {
+  color: #43b3adb0;
+  -webkit-animation: spin 0.5s linear infinite;
+  -moz-animation: spin 0.5s linear infinite;
+  animation: spin 0.5s linear infinite;
+}
+
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.search-icon {
+  color: #43b3adb0;
+  position: absolute;
+  left: 10px;
+  margin-left: 20px;
+  top: 25px;
+}
+input {
+  color: #43b3adb0;
+  flex-grow: 1;
+  border: none;
+  padding: 20px 20px 20px 20px;
+  border-radius: 30px;
+  font-size: 1.5rem;
+  text-shadow: 0px 0px 1px #43b3adb0;
+}
+
+button {
+  position: absolute;
+  border-radius: 30px;
+  height: 100%;
+  width: 30%;
+  right: 0;
+  font-size: 1.6rem;
+  color: whitesmoke;
+  transition: all 0.5s;
+  cursor: pointer;
+  border: none;
+  background-color: #43b3ae;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.description {
+  line-height: 5px;
+  padding-bottom: 5px;
+}
+
+.condition-main {
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.condition-description {
+  font-weight: 500;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+
+.temp {
+  line-height: 3px;
+}
+
+.temp p {
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.temp p span {
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding-left: 15px;
+}
+
+.city-country {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.city-country span {
+  font-weight: 700;
 }
 
 .App-header {
